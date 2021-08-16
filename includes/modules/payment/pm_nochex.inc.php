@@ -5,7 +5,7 @@ class pm_nochex{
 
 	public $id = __CLASS__;
     public $name = 'Nochex';
-    public $description = '<img src="https://www.nochex.com/logobase-secure-images/logobase-banners/clear-amex-mp-vme.png" height="90" />';
+    public $description = '<img src="https://www.nochex.com/logobase-secure-images/logobase-banners/clear.png" height="90" />';
     public $author = 'Nochex';
     public $version = '1.0';
     public $website = 'http://www.nochex.com';
@@ -37,7 +37,7 @@ class pm_nochex{
 	 
 	 
       $method = array(
-        'title' => '<img src="https://www.nochex.com/logobase-secure-images/logobase-banners/clear-amex-mp.png" height="70px" />',
+        'title' => '<img src="https://www.nochex.com/logobase-secure-images/logobase-banners/clear.png" height="90px" />',
         'description' => '',
         'options' => array(
           array(
