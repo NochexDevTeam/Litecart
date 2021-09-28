@@ -7,7 +7,7 @@ class pm_nochex{
     public $name = 'Nochex';
     public $description = '<img src="https://www.nochex.com/logobase-secure-images/logobase-banners/clear.png" height="90" />';
     public $author = 'Nochex';
-    public $version = '1.0';
+    public $version = '1.2';
     public $website = 'https://www.nochex.com';
     public $priority = 0;
     
