@@ -8,7 +8,7 @@ class pm_nochex{
     public $description = '<img src="https://www.nochex.com/logobase-secure-images/logobase-banners/clear.png" height="90" />';
     public $author = 'Nochex';
     public $version = '1.0';
-    public $website = 'http://www.nochex.com';
+    public $website = 'https://www.nochex.com';
     public $priority = 0;
     
     public function __construct() {
@@ -125,6 +125,7 @@ class pm_nochex{
         'description'   => $description,
         'xml_item_collection'   => $xmlCollection,
         'order_id'   => $orderID,
+        'optional_2'   => "Enabled",
         'billing_fullname'   => $order->data['customer']['firstname'] . ', '. $order->data['customer']['lastname'],
         'billing_address'   => $order->data['customer']['address1'],
         'billing_city'   => $order->data['customer']['city'],
@@ -140,11 +141,14 @@ class pm_nochex{
         'test_success_url'   => document::ilink('order_process'),
         'test_transaction'   => $testTransaction,
         'hide_billing_details'   => $hideBilling,
-        'callback_url'   => document::ilink('nochex_apc.php'),
+        /*'callback_url'   => document::ilink('nochex_apc.php'),*/
+        'callback_url'   => document::ilink('/includes/modules/payment/nochex/nochex_apc.php'),
       );
-      
+      	  
 	$gateway_url = 'https://secure.nochex.com/default.aspx'; 
        
+	   $order->save();
+	   
       return array(
         'action' => $gateway_url,
         'method' => 'post',
@@ -156,6 +160,7 @@ class pm_nochex{
 	
 	public function verify($order) {
 		
+		
 	    return array(
         'order_status_id' => $this->settings['order_status_id_complete'],/*
         'payment_transaction_id' => $session['transid'],*/
@@ -165,7 +170,7 @@ class pm_nochex{
 		
     public function receipt($order) {
 	
-	echo "<h1> Order created: ".$order->data['id']."</h1>";
+	//echo "<h1> Order created: ".$order->data['id']."</h1>";
 	
 	}
 	
@@ -233,9 +238,7 @@ class pm_nochex{
 
 	public function install() {}
     
-    public function uninstall() {}
+   	public function uninstall() {}
 }
-
-
 
 ?>
