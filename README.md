@@ -1,6 +1,6 @@
 Nochex Module for Litecart
 ============
-Tested up to Litecart version: 2.4.4
+Tested up to Litecart version: 2.5.1
 
 Installation
 ============
